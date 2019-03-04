@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   background: white;
   font-size: 62.5%;
@@ -47,10 +51,14 @@ li {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
   font-size: 1.6rem;
+  padding: 2rem;
 }
 
 .js-info {
   background: #F0DB4F;
+  -webkit-box-shadow: 3px 7px 23px 1px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 3px 7px 23px 1px rgba(0, 0, 0, 0.52);
+  box-shadow: 3px 7px 23px 1px rgba(0, 0, 0, 0.52);
 }
 
 .info-header {
@@ -59,7 +67,10 @@ li {
 
 span.js-span {
   background: #F0DB4F;
-  padding: 5px;
+  padding: 0.5rem;
+  -webkit-box-shadow: 3px 7px 23px 1px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 3px 7px 23px 1px rgba(0, 0, 0, 0.52);
+  box-shadow: 3px 7px 23px 1px rgba(0, 0, 0, 0.52);
 }
 
 .js-article {
