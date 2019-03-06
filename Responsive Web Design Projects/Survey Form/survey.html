@@ -8,6 +8,22 @@
         <main>
             <h1 id="title">Learning Experience Survey</h1>
             <p id="description">Please help us improve our services by answering these short questions about how your learning experience has been so far.</p>
+            <form id ="survey-form">
+                <label for="name" id="name-label">
+                    <span>Name:  </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                    <input type="text" id="name" name="user_name" autofocus>
+                </label>
+                <label for="email" id="email-label">
+                    <span>E-mail: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                    <input type="email" id="email" name="user_email">
+                </label>
+                <label for="number" id="number-label">
+                    <span>User Age:  </span>
+                    <input type="text" id="number" name="user_age" min="0" max="120">
+                </label>
+            </form>
         </main>
         <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     </body>
