@@ -20,7 +20,7 @@
                             </label>
                         </div>
                         <div class="right-input">
-                            <input type="text" id="name" name="user_name" placeholder="First Name" required autofocus>
+                            <input type="text" id="name" name="user_name" placeholder="First Name" class="user-input" required autofocus>
                         </div>
                     </div>
                     <div class="survey-section user-email">
@@ -31,7 +31,7 @@
                             </label>
                         </div>
                         <div class="right-input">
-                            <input type="email" id="email" name="user_email" placeholder="example@gmail.com" required>
+                            <input type="email" id="email" name="user_email" placeholder="example@gmail.com" class="user-input" required>
                         </div>
                     </div>
                     <div class="survey-section user-age">
@@ -41,53 +41,58 @@
                             </label>
                         </div>
                         <div class="right-input">
-                            <input type="number" id="number" name="user_age" min="0" max="120" placeholder="Your Age">
+                            <input type="number" id="number" name="user_age" min="0" max="120" placeholder="Your Age" class="user-input--nonText">
                         </div>
                     </div>
                     <div class="survey-section user-dropdown">
                         <div class="left-input">
                             <label for="dropdown" class="label">
+                                <strong><abbr title="required">*</abbr></strong>
                                 <span class="input-string">Which method of learning was most useful to you?</span>
                             </label>
                         </div>
                         <div class="right-input">
-                            <select id="dropdown" name="dropdown">
-                                <option value="videos">Videos</option>
-                                <option value="reading">Reading</option>
-                                <option value="lectures">Lectures</option>
+                            <select id="dropdown" name="dropdown" class="user-input--nonText" required>
+                                <option value="" selected disabled hidden>
+                                    Please choose...
+                                </option>
+                                <option value="0">Videos</option>
+                                <option value="1">Reading</option>
+                                <option value="2">Lectures</option>
                             </select>
                         </div>
                     </div>
                     <div class="survey-section user-radio">
                         <div class="left-input">
-                            <label for="radio" class="label">
+                            <label class="label">
+                                <strong><abbr title="required">*</abbr></strong>
                                 <span class="input-string">How likely are you to recommend this service to someone else?</span>
                             </label>
                         </div>
                         <div class="right-input">
                             <ul class="radio-ul">
                                 <li class="radio-li">
-                                    <label class="radio-label">
-                                        Definitely
-                                        <input name="radio-choices" type="radio" value="1" class="user-rec">
+                                    <label class="radio-label" for="radioChoice1">
+                                        <input name="radio-choices" type="radio" value="1" class="user-rec" id="radioChoice1" checked>
+                                        Very Likely
                                     </label>
                                 </li>
                                 <li class="radio-li">
-                                    <label class="radio-label">
+                                    <label class="radio-label" for="radioChoice2">
+                                        <input name="radio-choices" type="radio" value="2" class="user-rec" id="radioChoice2">
                                         Maybe
-                                        <input name="radio-choices" type="radio" value="2" class="user-rec">
                                     </label>
                                 </li>
                                 <li class="radio-li">
-                                    <label class="radio-label">
-                                        Definitely Not
-                                        <input name="radio-choices" type="radio" value="3" class="user-rec">
+                                    <label class="radio-label" for="radioChoice3">
+                                        <input name="radio-choices" type="radio" value="3" class="user-rec" id="radioChoice3">
+                                        Not Very Likely
                                     </label>
                                 </li>
                                 <li class="radio-li">
-                                    <label class="radio-label">
+                                    <label class="radio-label" for="radioChoice4">
+                                        <input name="radio-choices" type="radio" value="4" class="user-rec" id="radioChoice4">
                                         Not Sure
-                                        <input name="radio-choices" type="radio" value="4" class="user-rec">
                                     </label>
                                 </li>
                             </ul>
@@ -95,7 +100,7 @@
                     </div>
                     <div class="survey-section section-checkbox">
                         <div class="left-input">
-                            <label for="user-checkbox" class="label">
+                            <label class="label">
                                 <span class="input-string">Which of these types of learning have you attempted during this course? (Check
                                     all that apply)</span>
                             </label>
@@ -103,33 +108,33 @@
                         <div class="right-input">
                             <ul class="learning-check">
                                 <li class="checkbox">
-                                    <label class="check-label">
+                                    <label class="check-label" for="checkbox1">
+                                        <input name="user-check" type="checkbox" value="1" class="user-rec" id="checkbox1">
                                         Streaming Lectures
-                                        <input name="user-check" type="checkbox" value="1" class="user-rec">
                                     </label>
                                 </li>
                                 <li class="checkbox">
-                                    <label class="check-label">
+                                    <label class="check-label" for="checkbox2">
+                                        <input name="user-check" type="checkbox" value="2" class="user-rec" id="checkbox2">
                                         Reading Textbook
-                                        <input name="user-check" type="checkbox" value="2" class="user-rec">
                                     </label>
                                 </li>
                                 <li class="checkbox">
-                                    <label class="check-label">
+                                    <label class="check-label" for="checkbox3">
+                                        <input name="user-check" type="checkbox" value="3" class="user-rec" id="checkbox3">
                                         Practice Problems
-                                        <input name="user-check" type="checkbox" value="3" class="user-rec">
                                     </label>
                                 </li>
                                 <li class="checkbox">
-                                    <label class="check-label">
+                                    <label class="check-label" for="checkbox4">
+                                        <input name="user-check" type="checkbox" value="4" class="user-rec" id="checkbox4">
                                         Self-Learning
-                                        <input name="user-check" type="checkbox" value="4" class="user-rec">
                                     </label>
                                 </li>
                                 <li class="checkbox">
-                                    <label class="check-label">
+                                    <label class="check-label" for="checkbox5">
+                                        <input name="user-check" type="checkbox" value="5" class="user-rec" id="checkbox5">
                                         Study Groups
-                                        <input name="user-check" type="checkbox" value="5" class="user-rec">
                                     </label>
                                 </li>
                             </ul>
@@ -140,10 +145,12 @@
                             <label for="user-comments" class="label">Please enter any comments or suggestions here:</label>
                         </div>
                         <div class="right-input">
-                            <textarea name="user-comments" id="user-comments" class="form-textArea" rows="3">Enter text here...</textarea>
+                            <textarea name="user-comments" id="user-comments" class="form-textArea" rows="3" placeholder="Enter text here..."></textarea>
                         </div>
                     </div>
-                    <button id="submit" type="submit">Submit</button>
+                    <div class="survey-section submit-section">
+                        <button id="submit" type="submit">Submit</button>
+                    </div>
                 </form>
             </section>
             
