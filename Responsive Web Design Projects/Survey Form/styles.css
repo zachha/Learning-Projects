@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: white;
+  font-size: 62.5%;
+  color: #647595;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: " . title . " " . survey . ";
+}
+
+label {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 2rem;
+  line-height: 2;
+}
+
+.title-section {
+  grid-area: title;
+  text-align: center;
+}
+
+.survey {
+  grid-area: survey;
+}
+
+.survey-form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.survey-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.left-input {
+  text-align: right;
+}
+
+#title {
+  margin-bottom: 5px;
+}
+
+#description {
+  margin-top: 5px;
+}
+
+/*# sourceMappingURL=styles.css.map */
