@@ -1,4 +1,4 @@
-
+// chessboard with variable size complete
 function chessBoard(len, wid) {
   	// declare variables for starting row and odd/even rows
 	let rowStart = " #";
