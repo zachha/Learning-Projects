@@ -42,6 +42,7 @@ function reverseArrayInPlace(arr) {
 	let count = 0;
 	arr.forEach( num => {
 		if ( count < Math.floor(arr.length / 2)) {
+			let oppNum = arr.length - 1;
 			oppNum -= count;
 			arr[count] = arr[oppNum];
 			arr[oppNum] = num;
