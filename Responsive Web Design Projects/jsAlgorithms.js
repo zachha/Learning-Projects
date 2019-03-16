@@ -27,6 +27,7 @@ function chessBoard(len, wid) {
   console.log(boardString);
 }
 
+// reverses an array using a new empty array 
 function reverseArray(arr) {
 	let newArr = [];
 	arr.forEach(elem => {
@@ -35,11 +36,18 @@ function reverseArray(arr) {
 	return newArr;
 }
 
+// reverses an array without the help of a new array
 function reverseArrayInPlace(arr) {
-	for (let i=0; i < arr.length; (i === 0) ? (i + 2) : (i + 1)) {
-		arr.unshift(arr[i]);
-		 arr.pop();
-	}
+	let oppNum = arr.length - 1;
+	let count = 0;
+	arr.forEach( num => {
+		if ( count < Math.floor(arr.length / 2)) {
+			oppNum -= count;
+			arr[count] = arr[oppNum];
+			arr[oppNum] = num;
+			count++;
+		}  	
+	});
 	return arr;
 }
 console.log(reverseArray(["A", "B", "C"]));
