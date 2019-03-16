@@ -26,3 +26,23 @@ function chessBoard(len, wid) {
   	}
   console.log(boardString);
 }
+
+function reverseArray(arr) {
+	let newArr = [];
+	arr.forEach(elem => {
+		newArr.unshift(elem);
+	});
+	return newArr;
+}
+
+function reverseArrayInPlace(arr) {
+	for (let i=0; i < arr.length; (i === 0) ? (i + 2) : (i + 1)) {
+		arr.unshift(arr[i]);
+		 arr.pop();
+	}
+	return arr;
+}
+console.log(reverseArray(["A", "B", "C"]));
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
