@@ -85,6 +85,7 @@ function nth (list, index) {
   	else return nth(list, index-1);
 }
 
+// compares two values or objects and checks for deep equality
 function deepEqual (valOne, valTwo) {
 	if ((valOne !== null) && (valTwo !== null) && (typeof valOne && typeof valTwo === "object")) {
     	
@@ -95,22 +96,29 @@ function deepEqual (valOne, valTwo) {
       	let keyCounter = 0;
       	// loop through the arrays and compare the keys to see if they are the same
       	for (let i=0; i < objArrOne.length; i++) {
-          	// if they are the same, deepEqual will be run recursively to compare the values of each key
+          // if they are the same, deepEqual will be run recursively to compare the values of each key
         	if (objArrOne[i] === objArrTwo[i]) {
             	keyCounter++;
             }
-        }
+				}
+				// if the arrays are equal, recursively check each value in the objects for equality
       	if (keyCounter === objArrOne.length) {
           	let objEqual = true;
+          	let isDeepEqual = true;
         	while (objEqual) {
               	for (let j=0; j < objArrOne.length; j++) {
-                	if (!deepEqual(objArrOne[j], objArrTwo[j])) {
+                	if (!deepEqual(valOne[objArrOne[j]], valTwo[objArrTwo[j]])) {
                     	objEqual = false;
+                      	isDeepEqual = false;
                     }
                 }
+              	objEqual = false;
             }
+          	if (isDeepEqual) return true;
+          	else return false;
         } else return false;
     } else {
+			// check if two non-object values are equal
     	return (valOne === valTwo);
     }
 }
