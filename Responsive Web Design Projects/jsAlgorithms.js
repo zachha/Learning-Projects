@@ -84,3 +84,33 @@ function nth (list, index) {
   	else if (index === 0) return list.value;
   	else return nth(list, index-1);
 }
+
+function deepEqual (valOne, valTwo) {
+	if ((valOne !== null) && (valTwo !== null) && (typeof valOne && typeof valTwo === "object")) {
+    	
+      	// take the keys for both objects and store them in seperate arrays
+      	let objArrOne = Object.keys(valOne);
+      	let objArrTwo = Object.keys(valTwo);
+      	
+      	let keyCounter = 0;
+      	// loop through the arrays and compare the keys to see if they are the same
+      	for (let i=0; i < objArrOne.length; i++) {
+          	// if they are the same, deepEqual will be run recursively to compare the values of each key
+        	if (objArrOne[i] === objArrTwo[i]) {
+            	keyCounter++;
+            }
+        }
+      	if (keyCounter === objArrOne.length) {
+          	let objEqual = true;
+        	while (objEqual) {
+              	for (let j=0; j < objArrOne.length; j++) {
+                	if (!deepEqual(objArrOne[j], objArrTwo[j])) {
+                    	objEqual = false;
+                    }
+                }
+            }
+        } else return false;
+    } else {
+    	return (valOne === valTwo);
+    }
+}
