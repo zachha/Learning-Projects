@@ -51,7 +51,36 @@ function reverseArrayInPlace(arr) {
 	});
 	return arr;
 }
-console.log(reverseArray(["A", "B", "C"]));
-let arrayValue = [1, 2, 3, 4, 5];
-reverseArrayInPlace(arrayValue);
-console.log(arrayValue);
+
+// turns an array into a list data structure
+function arrayToList (arr) {
+	let list = null;
+  	for (let i = arr.length -1; i >= 0; i--) {
+    	list = { value: arr[i], rest: list };
+    }
+  	return list;
+}
+
+// turns a list into an array
+function listToArray (list) {
+	let listArr = [];
+  	listArr.push(list.value);
+  	let tempList = list.rest;
+  	while (tempList) {
+    	listArr.push(tempList.value);
+      	tempList = tempList.rest;
+    }
+  	return listArr;
+}
+
+// helper function that creates new list and adds an element to the front of the input list
+function prepend (value, list) {
+	return { value, rest: list};
+}
+
+// returns the value from the list using the specified index
+function nth (list, index) {
+	if (!list) return undefined;
+  	else if (index === 0) return list.value;
+  	else return nth(list, index-1);
+}
