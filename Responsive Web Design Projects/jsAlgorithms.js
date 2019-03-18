@@ -135,3 +135,18 @@ function loop (val, test, update, body) {
 }
 
 loop(3, n => n > 0, n => n - 1, console.log);
+
+// tests every element in an array and returns true if all pass
+function every(array, test) {
+  let allTrue = true;
+  array.forEach( elem => {
+  	if (!test(elem)) return allTrue = false;
+  });
+  return allTrue;
+}
+
+// uses the some array method to test every array element
+function everySome(array, test) {
+	if (array.some( elem => !test(elem) )) return false;
+  	else return true;
+}
