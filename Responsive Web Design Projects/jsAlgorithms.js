@@ -127,3 +127,11 @@ function deepEqual (valOne, valTwo) {
 let randArr = [[1, 2, 3], [4, 5], [6]];
 let redArr = arrays.reduce( (acc, cur) => acc.concat(cur) );
 
+// higher-order loop function 
+function loop (val, test, update, body) {
+  for (val; test(val); val = update(val)) {
+    body(val);
+  }	
+}
+
+loop(3, n => n > 0, n => n - 1, console.log);
