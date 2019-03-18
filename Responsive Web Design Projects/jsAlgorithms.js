@@ -122,3 +122,8 @@ function deepEqual (valOne, valTwo) {
     	return (valOne === valTwo);
     }
 }
+
+// short function to 'flatten' arrays into one
+let randArr = [[1, 2, 3], [4, 5], [6]];
+let redArr = arrays.reduce( (acc, cur) => acc.concat(cur) );
+
