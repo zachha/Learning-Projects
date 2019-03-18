@@ -150,3 +150,45 @@ function everySome(array, test) {
 	if (array.some( elem => !test(elem) )) return false;
   	else return true;
 }
+
+// loops through array of scripts to pinpoint language based on char unicodes
+function characterScript(code) {
+  for (let script of SCRIPTS) {
+    if (script.ranges.some(([from, to]) => {
+      return code >= from && code < to;
+    })) {
+      return script;
+    }
+  }
+  return null;
+}
+
+// function that lets you count array properties by specified function
+function countBy(items, groupName) {
+  let counts = [];
+  for (let item of items) {
+    let name = groupName(item);
+    let known = counts.findIndex(c => c.name == name);
+    if (known == -1) {
+      counts.push({name, count: 1});
+    } else {
+      counts[known].count++;
+    }
+  }
+  return counts;
+}
+
+// uses the previous script functions to find the dominant text direction based on text input in different langauges
+function dominantDirection(text) {
+  let scripts = countBy(text, char => {
+  let script = characterScript(char.codePointAt(0));
+  return script ? script.direction : "none";
+  }).filter(({name}) => name != "none");
+  
+  if (scripts.length > 1) {
+  	let domDir = scripts.reduce((prev, curr) => {
+    	return prev.count < curr.count ? curr.name : prev.name;
+    });
+    return domDir;
+  } else return scripts[0].name;
+}
