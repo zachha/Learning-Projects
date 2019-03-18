@@ -84,6 +84,15 @@ abbr {
   align-items: center;
 }
 
+.submit-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding: 2rem;
+    justify-items: center;
+    align-items: center;
+}
+
 .left-input {
   text-align: right;
 }
@@ -109,3 +118,8 @@ select:invalid {
 }
 
 /*# sourceMappingURL=styles.css.map */
+#submit {
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 10%;
+}
