@@ -1,0 +1,117 @@
+/* Variables */
+$yellow: #F0DB4F;
+$black: #323330;
+$red: #db0011;
+$grey: #6c757d;
+$primaryText: #647595;
+
+/* Normalization and Typography */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: white;
+  font-size: 62.5%;
+  color: $primaryText;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 4.0rem;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+label {
+    font-size: 2.0rem;
+    line-height: 1.5;
+}
+
+/* Layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+        " . title . "
+        " . survey . "
+    ;
+}
+
+input, textarea, select {
+    padding: 1rem 1.6rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+  font-size: 2.0rem;
+  line-height: 2;
+}
+
+textarea {
+    resize: none;
+    width: 40rem;
+}
+
+select {
+    font-weight: 350;
+}
+
+abbr {
+    text-decoration: none;
+}
+.title-section {
+    grid-area: title;
+    text-align: center;
+}
+
+.survey {
+    grid-area: survey;
+}
+
+.survey-form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.survey-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+.left-input {
+    text-align: right;
+}
+
+.user-input {
+    width: 23rem;
+}
+
+.user-input--nonText {
+    width: 12rem;
+}
+
+select:invalid {
+    color: gray;
+}
+
+#title {
+    margin-bottom: 5px;
+}
+
+#description {
+    margin-top: 5px;
+}
