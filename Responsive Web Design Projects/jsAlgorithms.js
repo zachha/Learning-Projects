@@ -178,7 +178,7 @@ function countBy(items, groupName) {
   return counts;
 }
 
-// uses the previous script functions to find the dominant text direction based on text input in different langauges
+// uses the previous script functions to find the dominant text direction based on text input in different languages (based off of script object)
 function dominantDirection(text) {
   let scripts = countBy(text, char => {
   let script = characterScript(char.codePointAt(0));
