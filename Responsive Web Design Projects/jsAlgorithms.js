@@ -151,7 +151,7 @@ function everySome(array, test) {
   	else return true;
 }
 
-// loops through array of scripts to pinpoint language based on char unicodes
+// loops through array of scripts to pinpoint language based on char unicodes (requires SCRIPTS object)
 function characterScript(code) {
   for (let script of SCRIPTS) {
     if (script.ranges.some(([from, to]) => {
